@@ -1,0 +1,614 @@
+:root {
+  color-scheme: light;
+  --kiosk-bg: #f5f6f4;
+  --kiosk-surface: #ffffff;
+  --kiosk-surface-soft: #fbfbfa;
+  --kiosk-border: #e4e7e1;
+  --kiosk-text: #1f2933;
+  --kiosk-muted: #6b7280;
+  --kiosk-positive: #2f7d4a;
+  --kiosk-positive-soft: rgba(47, 125, 74, 0.12);
+  --kiosk-warm: #d97706;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(47, 125, 74, 0.08), transparent 26%),
+    radial-gradient(circle at top right, rgba(217, 119, 6, 0.07), transparent 26%),
+    linear-gradient(180deg, #fbfbf9 0%, #f3f4f1 100%);
+  color: var(--kiosk-text);
+}
+
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.kiosk-layout {
+  background: transparent;
+  min-height: 100vh;
+  height: auto;
+}
+
+.kiosk-layout .q-layout,
+.kiosk-layout .q-page-container,
+.kiosk-layout .q-page {
+  min-height: 100vh;
+  height: auto;
+}
+
+.kiosk-layout .q-page-container {
+  overflow: visible;
+}
+
+.kiosk-page {
+  min-height: auto;
+  height: auto;
+  overflow: visible;
+  padding-bottom: 160px;
+}
+
+.card-elevated {
+  border: 1px solid var(--kiosk-border);
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.06);
+  border-radius: 28px;
+}
+
+.welcome-card {
+  width: min(100%, 760px);
+  padding: 40px 28px 36px;
+  border-radius: 34px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--kiosk-border);
+  box-shadow: 0 18px 55px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.welcome-card__avatar {
+  background: transparent;
+}
+
+.welcome-card__mark,
+.menu-shell__logo,
+.cart-item__avatar-inner {
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: white;
+  background: linear-gradient(145deg, #2f7d4a 0%, #24663b 100%);
+}
+
+.welcome-card__cta {
+  min-width: 260px;
+  min-height: 64px;
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  box-shadow: 0 12px 28px rgba(47, 125, 74, 0.24);
+}
+
+.menu-shell,
+.customize-shell,
+.cart-shell,
+.checkout-shell {
+  overflow: hidden;
+}
+
+.menu-shell__header {
+  padding-block: 18px;
+}
+
+.menu-shell__logo {
+  width: 44px;
+  height: 44px;
+}
+
+.menu-tabs .q-tab {
+  min-height: 58px;
+  font-weight: 700;
+}
+
+.menu-subcategories {
+  max-width: 100%;
+}
+
+.menu-subcategories-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+
+.menu-subcategories__pill {
+  min-height: 46px;
+}
+
+.menu-content {
+  min-height: 52vh;
+  padding-bottom: 72px;
+}
+
+.menu-dishes-scroll {
+  height: 430px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.menu-dishes-scroll__item {
+  width: min(340px, 82vw);
+}
+
+.menu-promo-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.menu-promo-scroll__item {
+  width: min(360px, 84vw);
+}
+
+.menu-promo-card .dish-art {
+  min-height: 160px;
+}
+
+.menu-promo-card .dish-art__plate {
+  min-height: 160px;
+  padding: 16px;
+}
+
+.menu-promo-card .q-card-section {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.dish-card {
+  height: 100%;
+}
+
+.menu-content__empty {
+  border: 1px dashed var(--kiosk-border);
+  border-radius: 24px;
+  background: var(--kiosk-surface-soft);
+}
+
+.promo-card {
+  height: 100%;
+}
+
+.dish-art {
+  position: relative;
+  min-height: 250px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(31, 41, 51, 0.92), rgba(55, 65, 81, 0.88));
+}
+
+.dish-art__plate {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  min-height: 250px;
+  padding: 26px;
+  color: white;
+}
+
+.dish-art__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(12px);
+}
+
+.dish-art__glow--one {
+  width: 190px;
+  height: 190px;
+  top: -30px;
+  right: -10px;
+  background: rgba(47, 125, 74, 0.45);
+}
+
+.dish-art__glow--two {
+  width: 150px;
+  height: 150px;
+  bottom: -40px;
+  left: -20px;
+  background: rgba(217, 119, 6, 0.35);
+}
+
+.dish-art--green {
+  background: linear-gradient(145deg, #21402f 0%, #2f7d4a 100%);
+}
+
+.dish-art--olive {
+  background: linear-gradient(145deg, #3f4f2f 0%, #6b8b4a 100%);
+}
+
+.dish-art--sea {
+  background: linear-gradient(145deg, #0f3d49 0%, #1d7687 100%);
+}
+
+.dish-art--terracotta {
+  background: linear-gradient(145deg, #6b2f21 0%, #c26b3f 100%);
+}
+
+.dish-art--sand {
+  background: linear-gradient(145deg, #624620 0%, #c19a62 100%);
+}
+
+.dish-art--amber {
+  background: linear-gradient(145deg, #6f4518 0%, #d18c2c 100%);
+}
+
+.dish-art--brick {
+  background: linear-gradient(145deg, #53221f 0%, #a74b43 100%);
+}
+
+.dish-art--rose {
+  background: linear-gradient(145deg, #6f2943 0%, #cf6c8f 100%);
+}
+
+.dish-art--violet {
+  background: linear-gradient(145deg, #3e2a61 0%, #8b5cf6 100%);
+}
+
+.cart-item__avatar {
+  width: 74px;
+  height: 74px;
+}
+
+.cart-item__avatar-inner {
+  width: 100%;
+  height: 100%;
+}
+
+.cart-item__avatar-inner--green {
+  background: linear-gradient(145deg, #2f7d4a 0%, #21402f 100%);
+}
+
+.cart-item__avatar-inner--olive {
+  background: linear-gradient(145deg, #6b8b4a 0%, #3f4f2f 100%);
+}
+
+.cart-item__avatar-inner--sea {
+  background: linear-gradient(145deg, #1d7687 0%, #0f3d49 100%);
+}
+
+.cart-item__avatar-inner--terracotta {
+  background: linear-gradient(145deg, #c26b3f 0%, #6b2f21 100%);
+}
+
+.cart-item__avatar-inner--sand {
+  background: linear-gradient(145deg, #c19a62 0%, #624620 100%);
+}
+
+.cart-item__avatar-inner--amber {
+  background: linear-gradient(145deg, #d18c2c 0%, #6f4518 100%);
+}
+
+.cart-item__avatar-inner--brick {
+  background: linear-gradient(145deg, #a74b43 0%, #53221f 100%);
+}
+
+.quantity-stepper {
+  display: grid;
+  grid-template-columns: 48px minmax(76px, 104px) 48px;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-stepper__input .q-field__control {
+  background: white;
+}
+
+.coupon-box .q-field__control,
+.payment-summary,
+.cart-billing,
+.welcome-card,
+.customize-shell__visual,
+.customize-shell__options,
+.checkout-shell {
+  background: var(--kiosk-surface);
+}
+
+.cart-shell__list {
+  max-height: min(66vh, 760px);
+  overflow: auto;
+}
+
+.cart-billing {
+  position: sticky;
+  top: 24px;
+}
+
+.payment-summary {
+  border-radius: 20px;
+  border: 1px solid var(--kiosk-border);
+}
+
+.payment-success {
+  width: min(100%, 520px);
+  border-radius: 24px;
+}
+
+@media (max-width: 1023px) {
+  .kiosk-page {
+    min-height: auto;
+  }
+
+  .menu-shell,
+  .customize-shell,
+  .cart-shell,
+  .checkout-shell {
+    overflow: visible;
+  }
+
+  .cart-billing {
+    position: static;
+  }
+
+  .welcome-card {
+    padding: 28px 20px;
+  }
+
+  .welcome-card__cta {
+    width: 100%;
+  }
+
+  .menu-shell__header,
+  .q-card-section,
+  .menu-content,
+  .customize-shell__options,
+  .customize-shell__visual,
+  .cart-shell__list,
+  .cart-billing,
+  .checkout-shell {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .menu-tabs .q-tab {
+    min-height: 48px;
+    padding-inline: 12px;
+  }
+
+  .menu-dishes-scroll {
+    height: auto;
+  }
+
+  .menu-dishes-scroll__item {
+    width: min(300px, 78vw);
+  }
+
+  .dish-art {
+    min-height: 220px;
+  }
+
+  .dish-art__plate {
+    min-height: 220px;
+    padding: 20px;
+  }
+
+  .cart-shell__list {
+    max-height: none;
+  }
+
+  .cart-billing {
+    top: auto;
+  }
+
+  .quantity-stepper {
+    grid-template-columns: 44px minmax(64px, 92px) 44px;
+    gap: 8px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1366px) {
+  .kiosk-page {
+    padding: 12px !important;
+    padding-bottom: 96px;
+  }
+
+  .menu-shell,
+  .customize-shell,
+  .cart-shell,
+  .checkout-shell {
+    border-radius: 24px;
+  }
+
+  .menu-shell__header,
+  .menu-content,
+  .customize-shell__visual,
+  .customize-shell__options,
+  .cart-shell__list,
+  .cart-billing,
+  .checkout-shell {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .menu-shell .q-card-section,
+  .customize-shell .q-card-section,
+  .cart-shell .q-card-section,
+  .checkout-shell .q-card-section {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .menu-tabs .q-tab {
+    min-height: 44px;
+    font-size: 0.86rem;
+    padding-inline: 10px;
+  }
+
+  .menu-subcategories__pill {
+    min-height: 40px;
+    font-size: 0.82rem;
+    padding-inline: 12px;
+  }
+
+  .menu-content {
+    padding-bottom: 44px;
+  }
+
+  .menu-dishes-scroll {
+    height: auto;
+  }
+
+  .menu-dishes-scroll__item {
+    width: min(270px, 34vw);
+  }
+
+  .menu-promo-scroll__item {
+    width: min(240px, 30vw);
+  }
+
+  .menu-promo-card .dish-art {
+    min-height: 140px;
+  }
+
+  .menu-promo-card .dish-art__plate {
+    min-height: 140px;
+    padding: 14px;
+  }
+
+  .dish-art {
+    min-height: 180px;
+  }
+
+  .dish-art__plate {
+    min-height: 180px;
+    padding: 18px;
+  }
+
+  .dish-card .q-card-section {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .promo-card .dish-art {
+    min-height: 170px;
+  }
+
+  .promo-card .dish-art__plate {
+    min-height: 170px;
+    padding: 16px;
+  }
+
+  .q-btn--lg {
+    min-height: 52px;
+  }
+
+  .cart-shell__list {
+    max-height: none;
+  }
+
+  .cart-billing {
+    position: static;
+  }
+
+  .customize-shell .row.q-col-gutter-lg {
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+
+  .customize-shell .row.q-col-gutter-lg > [class*='col-'] {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .customize-shell__options .q-btn-toggle .q-btn {
+    min-width: 0;
+    font-size: 0.86rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .kiosk-page {
+    padding: 10px !important;
+    padding-bottom: 120px;
+  }
+
+  .menu-shell__header {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .menu-shell__header .row.items-center.q-gutter-md.no-wrap {
+    gap: 10px !important;
+  }
+
+  .menu-shell__logo {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 auto;
+  }
+
+  .menu-tabs .q-tab {
+    min-height: 44px;
+    font-size: 0.82rem;
+    padding-inline: 10px;
+  }
+
+  .menu-subcategories__pill {
+    min-height: 40px;
+    font-size: 0.8rem;
+    padding-inline: 12px;
+  }
+
+  .menu-content {
+    padding-bottom: 56px;
+  }
+
+  .menu-content > .row.items-center.justify-between.q-mb-md {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .menu-dishes-scroll__item {
+    width: min(88vw, 320px);
+  }
+
+  .promo-card,
+  .dish-card,
+  .welcome-card,
+  .customize-shell__visual,
+  .customize-shell__options,
+  .cart-shell,
+  .checkout-shell {
+    border-radius: 22px;
+  }
+
+  .customize-shell .row.q-col-gutter-lg {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .customize-shell .row.q-col-gutter-lg > [class*='col-'] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .customize-shell__options .q-btn-toggle {
+    flex-wrap: wrap;
+  }
+
+  .customize-shell__options .q-btn-toggle .q-btn {
+    min-width: 100%;
+  }
+
+  .cart-billing .q-card-actions,
+  .checkout-shell .q-card-actions {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .payment-success {
+    width: 100%;
+  }
+}
