@@ -1,6 +1,6 @@
-# App de Autoservicio - Cliente en Mesa/Kiosco
+# Kitchen Display System - Taquería Tradición
 
-Scaffold Vue 3 + Vite + Quasar + Pinia + Vue Router para un flujo táctil tipo kiosco.
+Pantalla KDS construida con Vue 3 + Vite + Quasar + Vue Router. Simula la llegada de pedidos a cocina y su avance por estados.
 
 ## Scripts
 
@@ -9,10 +9,9 @@ npm install
 npm run dev
 ```
 
-## Flujo
+## Vista principal
 
-1. Bienvenida
-2. Menú y exploración
-3. Personalización del platillo
-4. Carrito y resumen
-5. Checkout y confirmación
+1. Tickets nuevos
+2. En preparación
+3. Listos para pase
+4. Historial de pedidos cerrados
